@@ -62,27 +62,36 @@ export function Footer() {
                   className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 transition-all bg-card"
                 >
                   <div className="p-4">
-
                     <div className="flex items-start gap-2">
                       <MapPin size={14} className="text-gold-dark mt-1 flex-shrink-0" aria-hidden />
                       <div className="min-w-0">
-                        <div className="font-medium text-foreground text-sm">
-                          {u.name}
-                        </div>
+                        <div className="font-medium text-foreground text-sm">{u.name}</div>
                         <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
                           {u.address}
                         </p>
-                        <a
-                          href={unitWaLink(u)}
-                          onClick={() => onWhatsAppClick("footer_unit", { unit: u.id })}
-                          target="_blank"
-                          rel="noopener"
-                          className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-gold-dark hover:underline"
-                        >
-                          <MessageCircle size={12} aria-hidden />
-                          Agendar nesta unidade →
-                        </a>
+                        <div className="mt-3 flex flex-wrap items-center gap-3">
+                          <a
+                            href={unitMapUrl(u)}
+                            target="_blank"
+                            rel="noopener"
+                            className="text-xs font-medium text-muted-foreground hover:underline"
+                          >
+                            Como chegar
+                          </a>
+                          <a
+                            href={unitWaLink(u)}
+                            onClick={() => onWhatsAppClick("footer_unit", { unit: u.id })}
+                            target="_blank"
+                            rel="noopener"
+                            className="inline-flex items-center gap-1 text-xs font-medium text-gold-dark hover:underline"
+                          >
+                            <MessageCircle size={12} aria-hidden />
+                            Agendar
+                          </a>
+                        </div>
                       </div>
+                    </div>
+
                     </div>
                   </div>
                 </div>
