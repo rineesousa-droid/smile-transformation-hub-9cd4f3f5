@@ -13,9 +13,8 @@ export function Footer() {
               YL <span className="text-gradient-gold">Odontologia</span>
             </div>
             <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-              Facetas em resina, harmonização facial e atendimento odontológico
-              completo em Fortaleza-CE. Técnica, cuidado e planejamento
-              individual em cada atendimento.
+              Facetas em resina, harmonização facial e atendimento odontológico completo em
+              Fortaleza-CE. Técnica, cuidado e planejamento individual em cada atendimento.
             </p>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
@@ -59,42 +58,36 @@ export function Footer() {
               {CLINIC.units.map((u) => (
                 <div
                   key={u.id}
-                  className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 hover:shadow-soft transition-all bg-card"
+                  className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 transition-all bg-card"
                 >
-                  <a
-                    href={unitMapUrl(u)}
-                    target="_blank"
-                    rel="noopener"
-                    aria-label={`Abrir ${u.name} no Google Maps`}
-                    className="block aspect-[4/3] bg-cream overflow-hidden"
-                  >
-                    <iframe
-                      title={`Mapa — ${u.name}`}
-                      src={`https://www.google.com/maps?q=${u.mapQuery}&output=embed`}
-                      className="w-full h-full pointer-events-none"
-                      loading="lazy"
-                    />
-                  </a>
                   <div className="p-4">
                     <div className="flex items-start gap-2">
                       <MapPin size={14} className="text-gold-dark mt-1 flex-shrink-0" aria-hidden />
                       <div className="min-w-0">
-                        <div className="font-medium text-foreground text-sm">
-                          {u.name}
-                        </div>
+                        <div className="font-medium text-foreground text-sm">{u.name}</div>
                         <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
                           {u.address}
                         </p>
-                        <a
-                          href={unitWaLink(u)}
-                          onClick={() => onWhatsAppClick("footer_unit", { unit: u.id })}
-                          target="_blank"
-                          rel="noopener"
-                          className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-gold-dark hover:underline"
-                        >
-                          <MessageCircle size={12} aria-hidden />
-                          Agendar nesta unidade →
-                        </a>
+                        <div className="mt-3 flex flex-wrap items-center gap-3">
+                          <a
+                            href={unitMapUrl(u)}
+                            target="_blank"
+                            rel="noopener"
+                            className="text-xs font-medium text-muted-foreground hover:underline"
+                          >
+                            Como chegar
+                          </a>
+                          <a
+                            href={unitWaLink(u)}
+                            onClick={() => onWhatsAppClick("footer_unit", { unit: u.id })}
+                            target="_blank"
+                            rel="noopener"
+                            className="inline-flex items-center gap-1 text-xs font-medium text-gold-dark hover:underline"
+                          >
+                            <MessageCircle size={12} aria-hidden />
+                            Agendar
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -106,17 +99,17 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row md:flex-wrap justify-between gap-3 text-xs text-muted-foreground">
           <span>
-            © {new Date().getFullYear()} {CLINIC.brand} — {CLINIC.professional.fullName}. Todos os direitos reservados.
+            © {new Date().getFullYear()} {CLINIC.brand} — {CLINIC.professional.fullName}. Todos os
+            direitos reservados.
           </span>
           <span>
             Responsável técnica: {CLINIC.professional.fullName} · {CLINIC.professional.cro}
           </span>
         </div>
         <p className="mt-4 text-[11px] text-muted-foreground/80 max-w-3xl leading-relaxed">
-          Os resultados apresentados são de casos reais, divulgados com
-          autorização, e podem variar conforme as condições individuais de cada
-          paciente. As indicações e planos de tratamento são definidos após
-          avaliação profissional presencial.
+          Os resultados apresentados são de casos reais, divulgados com autorização, e podem variar
+          conforme as condições individuais de cada paciente. As indicações e planos de tratamento
+          são definidos após avaliação profissional presencial.
         </p>
       </div>
     </footer>

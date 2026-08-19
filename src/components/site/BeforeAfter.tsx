@@ -2,19 +2,13 @@ import { useRef, useState, useEffect } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import beforeFacetas from "@/assets/before-1.jpg";
 import afterFacetas from "@/assets/after-1.jpg";
-import beforeClareamento from "@/assets/before-clareamento.jpg";
-import afterClareamento from "@/assets/after-clareamento.jpg";
-import beforeHarmonizacao from "@/assets/before-harmonizacao.jpg";
-import afterHarmonizacao from "@/assets/after-harmonizacao.jpg";
 import beforeLabial from "@/assets/before-labial.jpg";
 import afterLabial from "@/assets/after-labial.jpg";
 import { Move } from "lucide-react";
 
 const cases = [
-  { id: "facetas", label: "Facetas de Resina", before: beforeFacetas, after: afterFacetas, sessions: "Definido em avaliação" },
-  { id: "clareamento", label: "Clareamento", before: beforeClareamento, after: afterClareamento, sessions: "Definido em avaliação" },
-  { id: "harmonizacao", label: "Gengivoplastia", before: beforeHarmonizacao, after: afterHarmonizacao, sessions: "Definido em avaliação" },
-  { id: "labial", label: "Preenchimento Labial", before: beforeLabial, after: afterLabial, sessions: "Definido em avaliação" },
+  { id: "facetas", label: "Facetas em Resina", before: beforeFacetas, after: afterFacetas },
+  { id: "labial", label: "Harmonização Facial", before: beforeLabial, after: afterLabial },
 ];
 
 export function BeforeAfter() {
@@ -56,25 +50,21 @@ export function BeforeAfter() {
   };
 
   return (
-    <section
-      id="resultados"
-      className="py-24 md:py-32 bg-background scroll-mt-24"
-    >
+    <section id="resultados" className="py-16 md:py-24 bg-cream scroll-mt-24">
       <div ref={reveal} className="reveal max-w-7xl mx-auto px-6">
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs tracking-[0.3em] uppercase text-gold-dark font-medium">
             Antes & Depois
           </span>
-          <h2 className="mt-4 font-display text-4xl md:text-6xl">
+          <h2 className="mt-3 font-display text-3xl md:text-5xl">
             Resultados que <span className="italic text-gradient-gold">encantam</span>
           </h2>
-          <p className="mt-5 text-muted-foreground text-lg">
-            Arraste o controle (ou use as setas do teclado) para ver a
-            transformação de casos reais.
+          <p className="mt-4 text-sm text-muted-foreground">
+            Arraste o controle (ou use as setas do teclado) para ver a transformação de casos reais.
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-10">
+        <div className="flex flex-wrap gap-3 justify-center mb-7">
           {cases.map((c) => {
             const isActive = active.id === c.id;
             return (
@@ -113,9 +103,7 @@ export function BeforeAfter() {
             src={active.after}
             alt={`Depois — ${active.label}`}
             className={`absolute inset-0 w-full h-full ${
-              active.id === "labial"
-                ? "object-cover object-center"
-                : "object-contain bg-black/90"
+              active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
             }`}
             loading="lazy"
           />
@@ -124,9 +112,7 @@ export function BeforeAfter() {
               src={active.before}
               alt={`Antes — ${active.label}`}
               className={`absolute inset-0 h-full w-[100vw] max-w-none ${
-                active.id === "labial"
-                  ? "object-cover object-center"
-                  : "object-contain bg-black/90"
+                active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
               }`}
               style={{ width: `${(100 / pos) * 100}%` }}
               loading="lazy"
@@ -151,23 +137,19 @@ export function BeforeAfter() {
 
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 text-white">
             <div className="glass px-4 py-2 rounded-xl">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">
-                Procedimento
-              </div>
+              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Procedimento</div>
               <div className="text-sm font-medium">{active.label}</div>
             </div>
             <div className="glass px-4 py-2 rounded-xl text-right">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">
-                Sessões
-              </div>
-              <div className="text-sm font-medium">{active.sessions}</div>
+              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Sessões</div>
+              <div className="text-sm font-medium">Definido em avaliação</div>
             </div>
           </div>
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground max-w-2xl mx-auto">
-          Imagens de casos reais divulgadas com autorização. Resultados podem
-          variar conforme as condições individuais de cada paciente.
+          Imagens de casos reais divulgadas com autorização. Resultados podem variar conforme as
+          condições individuais de cada paciente.
         </p>
       </div>
     </section>

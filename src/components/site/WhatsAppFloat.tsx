@@ -11,7 +11,10 @@ export function WhatsAppFloat() {
       className="fixed right-6 z-40 group focus-visible:outline-none"
       style={{ bottom: "calc(env(safe-area-inset-bottom, 0px) + 1.5rem)" }}
     >
-      <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30" aria-hidden />
+      <span
+        className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-30"
+        aria-hidden
+      />
       <span className="relative flex items-center justify-center w-16 h-16 rounded-full bg-[#25D366] text-white shadow-luxe hover:scale-110 transition-transform group-focus-visible:ring-2 group-focus-visible:ring-white group-focus-visible:ring-offset-2">
         <MessageCircle size={28} className="fill-white" aria-hidden />
       </span>
