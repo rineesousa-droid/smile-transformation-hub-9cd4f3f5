@@ -1,19 +1,19 @@
 import { useReveal } from "@/hooks/useReveal";
 import { Check } from "lucide-react";
 import dra from "@/assets/dra-yasmin.jpg";
-import { waLink, onWhatsAppClick } from "@/lib/whatsapp";
 import { CLINIC } from "@/lib/clinic-data";
+import { useBooking } from "@/components/site/BookingProvider";
 
 const highlights = [
-  "Estética do sorriso com abordagem minimamente invasiva",
-  "Planejamento digital individualizado",
-  "Foco em resultados naturais e harmônicos",
-  "Materiais e protocolos de alto padrão",
-  "Atendimento humanizado do início ao pós-tratamento",
+  "Formada pela Universidade de Fortaleza (UNIFOR)",
+  "Atuação na odontologia desde 2018",
+  "Especial atenção à estética do sorriso e harmonização facial",
+  "Atendimento personalizado em três unidades de Fortaleza",
 ];
 
 export function About() {
   const reveal = useReveal();
+  const { openBooking } = useBooking();
   return (
     <section id="sobre" className="py-24 md:py-32 bg-cream scroll-mt-24">
       <div
@@ -38,7 +38,7 @@ export function About() {
 
         <div className="order-2">
           <span className="text-xs tracking-[0.3em] uppercase text-gold-dark font-medium">
-            A Especialista
+            A Profissional
           </span>
           <h2 className="mt-4 font-display text-4xl md:text-5xl leading-tight">
             Conheça a profissional por trás das{" "}
@@ -46,9 +46,11 @@ export function About() {
           </h2>
           <p className="mt-6 text-muted-foreground text-lg leading-relaxed">
             <strong className="text-foreground">{CLINIC.professional.fullName}</strong>{" "}
-            é cirurgiã-dentista dedicada à estética do sorriso e harmonização
-            facial em Fortaleza. Une técnica refinada e sensibilidade artística
-            para entregar resultados que valorizam a beleza única de cada paciente.
+            é cirurgiã-dentista formada pela Universidade de Fortaleza (UNIFOR)
+            e atua na odontologia desde 2018. À frente da YL Odontologia,
+            dedica-se à transformação de sorrisos e da autoestima por meio de
+            tratamentos personalizados, com destaque para facetas em resina e
+            harmonização facial.
           </p>
 
           <dl className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
@@ -65,7 +67,7 @@ export function About() {
                 Atuação
               </dt>
               <dd className="mt-1 font-medium text-foreground">
-                {CLINIC.professional.role}
+                Desde {CLINIC.professional.since}
               </dd>
             </div>
           </dl>
@@ -81,15 +83,18 @@ export function About() {
             ))}
           </ul>
 
-          <a
-            href={waLink("Olá Dra. Yasmin! Gostaria de agendar uma avaliação.")}
-            onClick={() => onWhatsAppClick("about")}
-            target="_blank"
-            rel="noopener"
+          <button
+            type="button"
+            onClick={() =>
+              openBooking(
+                "about",
+                "Olá! Vim pelo site da YL Odontologia e gostaria de agendar uma avaliação com a Dra. Yasmin.",
+              )
+            }
             className="mt-10 inline-flex items-center gap-3 bg-foreground text-background px-8 py-4 rounded-full font-medium tracking-wide hover:shadow-luxe transition-all duration-500 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2"
           >
             Falar com a Dra. Yasmin
-          </a>
+          </button>
         </div>
       </div>
     </section>

@@ -1,6 +1,7 @@
-import { Instagram, MessageCircle, MapPin, Clock, Phone } from "lucide-react";
-import { waLink, INSTAGRAM_URL, onWhatsAppClick } from "@/lib/whatsapp";
-import { CLINIC } from "@/lib/clinic-data";
+import { Instagram, MessageCircle, MapPin, Clock } from "lucide-react";
+import { INSTAGRAM_URL, onWhatsAppClick } from "@/lib/whatsapp";
+import { CLINIC, unitMapUrl } from "@/lib/clinic-data";
+import { unitWaLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
@@ -12,15 +13,11 @@ export function Footer() {
               YL <span className="text-gradient-gold">Odontologia</span>
             </div>
             <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-              Estética do sorriso, harmonização facial e preenchimento labial em
-              Fortaleza-CE. Técnica, cuidado e planejamento individual em cada
-              atendimento.
+              Facetas em resina, harmonização facial e atendimento odontológico
+              completo em Fortaleza-CE. Técnica, cuidado e planejamento
+              individual em cada atendimento.
             </p>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
-              <li className="flex items-start gap-2">
-                <Phone size={16} className="text-gold-dark mt-0.5 flex-shrink-0" aria-hidden />
-                {CLINIC.contact.phoneDisplay}
-              </li>
               <li className="flex items-start gap-2">
                 <Clock size={16} className="text-gold-dark mt-0.5 flex-shrink-0" aria-hidden />
                 <span>
@@ -30,6 +27,17 @@ export function Footer() {
                     </span>
                   ))}
                 </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Instagram size={16} className="text-gold-dark mt-0.5 flex-shrink-0" aria-hidden />
+                <a
+                  href={INSTAGRAM_URL}
+                  target="_blank"
+                  rel="noopener"
+                  className="hover:text-foreground transition-colors"
+                >
+                  {CLINIC.contact.instagramHandle}
+                </a>
               </li>
             </ul>
             <div className="mt-6 flex gap-3">
@@ -41,16 +49,6 @@ export function Footer() {
                 className="w-11 h-11 rounded-full border border-border flex items-center justify-center hover:bg-gradient-gold hover:border-transparent transition-all"
               >
                 <Instagram size={18} />
-              </a>
-              <a
-                href={waLink()}
-                onClick={() => onWhatsAppClick("footer_icon")}
-                target="_blank"
-                rel="noopener"
-                aria-label="WhatsApp da YL Odontologia"
-                className="w-11 h-11 rounded-full border border-border flex items-center justify-center hover:bg-gradient-gold hover:border-transparent transition-all"
-              >
-                <MessageCircle size={18} />
               </a>
             </div>
           </div>
@@ -64,7 +62,7 @@ export function Footer() {
                   className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 hover:shadow-soft transition-all bg-card"
                 >
                   <a
-                    href={`https://www.google.com/maps?q=${u.mapQuery}`}
+                    href={unitMapUrl(u)}
                     target="_blank"
                     rel="noopener"
                     aria-label={`Abrir ${u.name} no Google Maps`}
@@ -88,12 +86,13 @@ export function Footer() {
                           {u.address}
                         </p>
                         <a
-                          href={waLink(`Olá! Gostaria de agendar uma avaliação na ${u.name}.`)}
+                          href={unitWaLink(u)}
                           onClick={() => onWhatsAppClick("footer_unit", { unit: u.id })}
                           target="_blank"
                           rel="noopener"
                           className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-gold-dark hover:underline"
                         >
+                          <MessageCircle size={12} aria-hidden />
                           Agendar nesta unidade →
                         </a>
                       </div>

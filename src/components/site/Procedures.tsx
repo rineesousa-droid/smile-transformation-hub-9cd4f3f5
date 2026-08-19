@@ -1,6 +1,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import { Sparkles, Sun, Smile, Anchor, Wand2, Heart, ArrowUpRight } from "lucide-react";
-import { waLink, onWhatsAppClick } from "@/lib/whatsapp";
+import { useBooking } from "@/components/site/BookingProvider";
+import { onWhatsAppClick } from "@/lib/whatsapp";
 
 const procedures = [
   {
@@ -37,6 +38,7 @@ const procedures = [
 
 export function Procedures() {
   const reveal = useReveal();
+  const { openBooking } = useBooking();
   return (
     <section
       id="procedimentos"
@@ -58,7 +60,7 @@ export function Procedures() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {procedures.map((p) => {
             const Icon = p.icon;
-            const msg = `Olá! Tenho interesse em saber mais sobre ${p.title}.`;
+            const msg = `Olá! Vim pelo site da YL Odontologia e tenho interesse em saber mais sobre ${p.title}.`;
             return (
               <div
                 key={p.title}
@@ -71,14 +73,13 @@ export function Procedures() {
                   </div>
                   <h3 className="font-display text-2xl mb-3">{p.title}</h3>
                   <p className="text-muted-foreground leading-relaxed flex-1">{p.desc}</p>
-                  <a
-                    href={waLink(msg)}
-                    onClick={() =>
-                      onWhatsAppClick("procedure_card", { procedure: p.title })
-                    }
-                    target="_blank"
-                    rel="noopener"
-                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-gold-dark transition-colors focus-visible:outline-none focus-visible:underline"
+                  <button
+                    type="button"
+                    onClick={() => {
+                      onWhatsAppClick("procedure_card", { procedure: p.title });
+                      openBooking("procedure_card", msg);
+                    }}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-foreground group-hover:text-gold-dark transition-colors focus-visible:outline-none focus-visible:underline text-left"
                     aria-label={`Saiba mais sobre ${p.title} pelo WhatsApp`}
                   >
                     Saiba mais
@@ -86,7 +87,7 @@ export function Procedures() {
                       size={16}
                       className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
                     />
-                  </a>
+                  </button>
                 </div>
               </div>
             );

@@ -1,12 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BookingProvider } from "@/components/site/BookingProvider";
 import { Navbar } from "@/components/site/Navbar";
 import { Hero } from "@/components/site/Hero";
 import { SocialProof } from "@/components/site/SocialProof";
+import { Facetas } from "@/components/site/Facetas";
 import { BeforeAfter } from "@/components/site/BeforeAfter";
-import { Procedures } from "@/components/site/Procedures";
+import { Harmonizacao } from "@/components/site/Harmonizacao";
 import { About } from "@/components/site/About";
+import { CompleteCare } from "@/components/site/CompleteCare";
 import { Testimonials } from "@/components/site/Testimonials";
-import { HowItWorks } from "@/components/site/HowItWorks";
+import { Units } from "@/components/site/Units";
 import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
@@ -19,13 +22,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Facetas de resina, clareamento, harmonização facial e preenchimento labial em Fortaleza-CE. Atendimento com a Dra. Yasmin Lopes em três unidades.",
+          "Facetas em resina, harmonização facial, botox e preenchimento facial em Fortaleza-CE. Atendimento com a Dra. Yasmin Lopes em três unidades.",
       },
       { property: "og:title", content: "YL Odontologia — Dra. Yasmin Lopes" },
       {
         property: "og:description",
         content:
-          "Estética do sorriso, harmonização facial e preenchimento labial em Fortaleza-CE. Agende sua avaliação.",
+          "Facetas em resina, harmonização facial e atendimento odontológico completo em Fortaleza-CE. Agende sua avaliação.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
@@ -43,7 +46,7 @@ export const Route = createFileRoute("/")({
           address: [
             {
               "@type": "PostalAddress",
-              streetAddress: "Av. Santos Dumont, 2122 — Sala 106",
+              streetAddress: "Av. Santos Dumont, 2122 — Sala 106 — Edifício Manhattan Center",
               addressLocality: "Fortaleza",
               addressRegion: "CE",
               addressCountry: "BR",
@@ -57,7 +60,7 @@ export const Route = createFileRoute("/")({
             },
             {
               "@type": "PostalAddress",
-              streetAddress: "Av. Bezerra de Menezes, 1250 — Sala 2103",
+              streetAddress: "Av. Bezerra de Menezes, 1250 — Sala 2103 — Edifício Momentum Office",
               addressLocality: "Fortaleza",
               addressRegion: "CE",
               addressCountry: "BR",
@@ -72,19 +75,23 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="bg-background text-foreground overflow-x-hidden">
-      <Navbar />
-      <Hero />
-      <SocialProof />
-      <BeforeAfter />
-      <Procedures />
-      <About />
-      <Testimonials />
-      <HowItWorks />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-      <WhatsAppFloat />
-    </main>
+    <BookingProvider>
+      <main className="bg-background text-foreground overflow-x-hidden">
+        <Navbar />
+        <Hero />
+        <SocialProof />
+        <Facetas />
+        <BeforeAfter />
+        <Harmonizacao />
+        <About />
+        <CompleteCare />
+        <Testimonials />
+        <Units />
+        <FAQ />
+        <FinalCTA />
+        <Footer />
+        <WhatsAppFloat />
+      </main>
+    </BookingProvider>
   );
 }

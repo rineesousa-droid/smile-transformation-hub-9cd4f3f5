@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { waLink, onWhatsAppClick } from "@/lib/whatsapp";
+import { useBooking } from "@/components/site/BookingProvider";
 
 const links = [
-  { href: "#procedimentos", label: "Procedimentos" },
+  { href: "#facetas", label: "Facetas" },
   { href: "#resultados", label: "Resultados" },
+  { href: "#harmonizacao", label: "Harmonização" },
   { href: "#sobre", label: "Dra. Yasmin" },
-  { href: "#depoimentos", label: "Depoimentos" },
-  { href: "#faq", label: "FAQ" },
+  { href: "#unidades", label: "Unidades" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { openBooking } = useBooking();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -47,15 +48,13 @@ export function Navbar() {
           ))}
         </nav>
 
-        <a
-          href={waLink("Olá! Gostaria de agendar minha avaliação.")}
-          onClick={() => onWhatsAppClick("navbar")}
-          target="_blank"
-          rel="noopener"
+        <button
+          type="button"
+          onClick={() => openBooking("navbar")}
           className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-foreground text-background text-sm font-medium hover:bg-foreground/90 transition-all hover:shadow-luxe focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2"
         >
           Agendar avaliação
-        </a>
+        </button>
 
         <button
           onClick={() => setOpen(!open)}
@@ -80,18 +79,16 @@ export function Navbar() {
                 {l.label}
               </a>
             ))}
-            <a
-              href={waLink("Olá! Gostaria de agendar minha avaliação.")}
+            <button
+              type="button"
               onClick={() => {
-                onWhatsAppClick("navbar_mobile");
+                openBooking("navbar_mobile");
                 setOpen(false);
               }}
-              target="_blank"
-              rel="noopener"
               className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-foreground text-background text-sm font-medium"
             >
               Agendar avaliação
-            </a>
+            </button>
           </nav>
         </div>
       )}
