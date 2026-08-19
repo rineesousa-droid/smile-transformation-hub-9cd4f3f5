@@ -1,6 +1,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import { Sparkles, Sun, Smile, Anchor, Wand2, Heart, ArrowUpRight } from "lucide-react";
-import { waLink, onWhatsAppClick } from "@/lib/whatsapp";
+import { useBooking } from "@/components/site/BookingProvider";
+import { onWhatsAppClick } from "@/lib/whatsapp";
 
 const procedures = [
   {
