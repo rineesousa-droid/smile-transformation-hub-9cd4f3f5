@@ -59,23 +59,10 @@ export function Footer() {
               {CLINIC.units.map((u) => (
                 <div
                   key={u.id}
-                  className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 hover:shadow-soft transition-all bg-card"
+                  className="group rounded-2xl border border-border overflow-hidden hover:border-gold/50 transition-all bg-card"
                 >
-                  <a
-                    href={unitMapUrl(u)}
-                    target="_blank"
-                    rel="noopener"
-                    aria-label={`Abrir ${u.name} no Google Maps`}
-                    className="block aspect-[4/3] bg-cream overflow-hidden"
-                  >
-                    <iframe
-                      title={`Mapa — ${u.name}`}
-                      src={`https://www.google.com/maps?q=${u.mapQuery}&output=embed`}
-                      className="w-full h-full pointer-events-none"
-                      loading="lazy"
-                    />
-                  </a>
                   <div className="p-4">
+
                     <div className="flex items-start gap-2">
                       <MapPin size={14} className="text-gold-dark mt-1 flex-shrink-0" aria-hidden />
                       <div className="min-w-0">
