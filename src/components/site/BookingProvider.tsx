@@ -46,8 +46,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
               Em qual unidade você deseja ser atendido?
             </DialogTitle>
             <DialogDescription>
-              Escolha a unidade mais conveniente e fale direto com a equipe pelo
-              WhatsApp.
+              Escolha a unidade mais conveniente e fale direto com a equipe pelo WhatsApp.
             </DialogDescription>
           </DialogHeader>
 
@@ -58,9 +57,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
                 className="rounded-2xl border border-border p-4 hover:border-gold/50 transition-colors"
               >
                 <div className="font-display text-lg">{u.name}</div>
-                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">
-                  {u.address}
-                </p>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{u.address}</p>
                 <div className="mt-3 flex flex-col sm:flex-row gap-2">
                   <a
                     href={unitWaLink(u, message)}

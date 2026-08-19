@@ -29,7 +29,11 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded" aria-label="YL Odontologia — voltar ao topo">
+        <a
+          href="#top"
+          className="flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded"
+          aria-label="YL Odontologia — voltar ao topo"
+        >
           <span className="font-display text-2xl tracking-tight">
             YL <span className="text-gradient-gold">Odontologia</span>
           </span>

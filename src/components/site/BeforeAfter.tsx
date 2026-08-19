@@ -50,10 +50,7 @@ export function BeforeAfter() {
   };
 
   return (
-    <section
-      id="resultados"
-      className="py-16 md:py-24 bg-cream scroll-mt-24"
-    >
+    <section id="resultados" className="py-16 md:py-24 bg-cream scroll-mt-24">
       <div ref={reveal} className="reveal max-w-7xl mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="text-xs tracking-[0.3em] uppercase text-gold-dark font-medium">
@@ -63,8 +60,7 @@ export function BeforeAfter() {
             Resultados que <span className="italic text-gradient-gold">encantam</span>
           </h2>
           <p className="mt-4 text-sm text-muted-foreground">
-            Arraste o controle (ou use as setas do teclado) para ver a
-            transformação de casos reais.
+            Arraste o controle (ou use as setas do teclado) para ver a transformação de casos reais.
           </p>
         </div>
 
@@ -107,9 +103,7 @@ export function BeforeAfter() {
             src={active.after}
             alt={`Depois — ${active.label}`}
             className={`absolute inset-0 w-full h-full ${
-              active.id === "labial"
-                ? "object-cover object-center"
-                : "object-contain bg-black/90"
+              active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
             }`}
             loading="lazy"
           />
@@ -118,9 +112,7 @@ export function BeforeAfter() {
               src={active.before}
               alt={`Antes — ${active.label}`}
               className={`absolute inset-0 h-full w-[100vw] max-w-none ${
-                active.id === "labial"
-                  ? "object-cover object-center"
-                  : "object-contain bg-black/90"
+                active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
               }`}
               style={{ width: `${(100 / pos) * 100}%` }}
               loading="lazy"
@@ -145,23 +137,19 @@ export function BeforeAfter() {
 
           <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 text-white">
             <div className="glass px-4 py-2 rounded-xl">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">
-                Procedimento
-              </div>
+              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Procedimento</div>
               <div className="text-sm font-medium">{active.label}</div>
             </div>
             <div className="glass px-4 py-2 rounded-xl text-right">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">
-                Sessões
-              </div>
+              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Sessões</div>
               <div className="text-sm font-medium">Definido em avaliação</div>
             </div>
           </div>
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground max-w-2xl mx-auto">
-          Imagens de casos reais divulgadas com autorização. Resultados podem
-          variar conforme as condições individuais de cada paciente.
+          Imagens de casos reais divulgadas com autorização. Resultados podem variar conforme as
+          condições individuais de cada paciente.
         </p>
       </div>
     </section>

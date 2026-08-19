@@ -19,8 +19,7 @@ export function Units() {
             Unidades
           </span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl">
-            Três endereços em{" "}
-            <span className="italic text-gradient-gold">Fortaleza</span>
+            Três endereços em <span className="italic text-gradient-gold">Fortaleza</span>
           </h2>
           <p className="mt-4 text-xs tracking-wide text-muted-foreground">
             Segunda a sexta: 09:00 às 18:00 · Sábado: 09:00 às 13:00

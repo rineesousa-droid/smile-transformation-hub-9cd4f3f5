@@ -29,14 +29,12 @@ export function About() {
             A profissional
           </span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl leading-[1.08]">
-            Dra. Yasmin{" "}
-            <span className="italic text-gradient-gold">Lopes</span>
+            Dra. Yasmin <span className="italic text-gradient-gold">Lopes</span>
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Cirurgiã-dentista formada pela Universidade de Fortaleza (UNIFOR),
-            com atuação voltada à transformação de sorrisos e à estética facial.
-            Seu trabalho busca resultados naturais e personalizados, respeitando
-            as características de cada paciente.
+            Cirurgiã-dentista formada pela Universidade de Fortaleza (UNIFOR), com atuação voltada à
+            transformação de sorrisos e à estética facial. Seu trabalho busca resultados naturais e
+            personalizados, respeitando as características de cada paciente.
           </p>
           <p className="mt-6 text-[11px] tracking-[0.22em] uppercase text-muted-foreground">
             {CLINIC.professional.cro} • Atuação desde {CLINIC.professional.since}

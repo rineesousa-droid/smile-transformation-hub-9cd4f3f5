@@ -21,8 +21,7 @@ export function FinalCTA() {
           <span className="italic text-gradient-gold">seu sorriso?</span>
         </h2>
         <p className="mt-6 text-base md:text-lg text-white/70 max-w-2xl mx-auto font-light leading-relaxed">
-          Escolha a unidade mais conveniente para você e fale com nossa equipe
-          pelo WhatsApp.
+          Escolha a unidade mais conveniente para você e fale com nossa equipe pelo WhatsApp.
         </p>
 
         <button

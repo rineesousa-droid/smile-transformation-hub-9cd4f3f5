@@ -39,21 +39,18 @@ export function Harmonizacao() {
             Estética facial
           </span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl leading-[1.08]">
-            Harmonização{" "}
-            <span className="italic text-gradient-gold">Facial</span>
+            Harmonização <span className="italic text-gradient-gold">Facial</span>
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Procedimentos com foco em equilíbrio, naturalidade e valorização das
-            suas características individuais — nunca em padronizar rostos.
+            Procedimentos com foco em equilíbrio, naturalidade e valorização das suas
+            características individuais — nunca em padronizar rostos.
           </p>
 
           <dl className="mt-7 divide-y divide-border border-y border-border">
             {items.map((i) => (
               <div key={i.title} className="py-4">
                 <dt className="font-display text-lg">{i.title}</dt>
-                <dd className="mt-1 text-sm text-muted-foreground leading-relaxed">
-                  {i.desc}
-                </dd>
+                <dd className="mt-1 text-sm text-muted-foreground leading-relaxed">{i.desc}</dd>
               </div>
             ))}
           </dl>

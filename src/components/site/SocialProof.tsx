@@ -1,12 +1,7 @@
 import { CLINIC } from "@/lib/clinic-data";
 import { useReveal } from "@/hooks/useReveal";
 
-const items = [
-  "Desde 2018",
-  "UNIFOR",
-  CLINIC.professional.cro,
-  "3 unidades em Fortaleza",
-];
+const items = ["Desde 2018", "UNIFOR", CLINIC.professional.cro, "3 unidades em Fortaleza"];
 
 export function SocialProof() {
   const reveal = useReveal();

@@ -13,9 +13,8 @@ export function Footer() {
               YL <span className="text-gradient-gold">Odontologia</span>
             </div>
             <p className="mt-4 text-muted-foreground max-w-md leading-relaxed">
-              Facetas em resina, harmonização facial e atendimento odontológico
-              completo em Fortaleza-CE. Técnica, cuidado e planejamento
-              individual em cada atendimento.
+              Facetas em resina, harmonização facial e atendimento odontológico completo em
+              Fortaleza-CE. Técnica, cuidado e planejamento individual em cada atendimento.
             </p>
             <ul className="mt-6 space-y-3 text-sm text-muted-foreground">
               <li className="flex items-start gap-2">
@@ -93,7 +92,6 @@ export function Footer() {
                     </div>
                   </div>
                 </div>
-
               ))}
             </div>
           </div>
@@ -101,17 +99,17 @@ export function Footer() {
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row md:flex-wrap justify-between gap-3 text-xs text-muted-foreground">
           <span>
-            © {new Date().getFullYear()} {CLINIC.brand} — {CLINIC.professional.fullName}. Todos os direitos reservados.
+            © {new Date().getFullYear()} {CLINIC.brand} — {CLINIC.professional.fullName}. Todos os
+            direitos reservados.
           </span>
           <span>
             Responsável técnica: {CLINIC.professional.fullName} · {CLINIC.professional.cro}
           </span>
         </div>
         <p className="mt-4 text-[11px] text-muted-foreground/80 max-w-3xl leading-relaxed">
-          Os resultados apresentados são de casos reais, divulgados com
-          autorização, e podem variar conforme as condições individuais de cada
-          paciente. As indicações e planos de tratamento são definidos após
-          avaliação profissional presencial.
+          Os resultados apresentados são de casos reais, divulgados com autorização, e podem variar
+          conforme as condições individuais de cada paciente. As indicações e planos de tratamento
+          são definidos após avaliação profissional presencial.
         </p>
       </div>
     </footer>

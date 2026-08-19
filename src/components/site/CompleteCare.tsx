@@ -5,21 +5,14 @@ export function CompleteCare() {
   const reveal = useReveal();
   const { openBooking } = useBooking();
   return (
-    <section
-      id="odontologia-completa"
-      className="py-12 md:py-16 bg-cream scroll-mt-24"
-    >
-      <div
-        ref={reveal}
-        className="reveal max-w-4xl mx-auto px-6 text-center"
-      >
+    <section id="odontologia-completa" className="py-12 md:py-16 bg-cream scroll-mt-24">
+      <div ref={reveal} className="reveal max-w-4xl mx-auto px-6 text-center">
         <h2 className="font-display text-2xl md:text-4xl">
-          Muito além da{" "}
-          <span className="italic text-gradient-gold">estética</span>
+          Muito além da <span className="italic text-gradient-gold">estética</span>
         </h2>
         <p className="mt-4 text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-          A YL Odontologia conta com profissionais de diferentes especialidades
-          para oferecer atendimento odontológico completo.
+          A YL Odontologia conta com profissionais de diferentes especialidades para oferecer
+          atendimento odontológico completo.
         </p>
         <button
           type="button"

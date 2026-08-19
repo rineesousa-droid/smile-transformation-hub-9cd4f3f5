@@ -17,13 +17,11 @@ export function Facetas() {
             Tratamento principal
           </span>
           <h2 className="mt-3 font-display text-3xl md:text-5xl leading-[1.08]">
-            Facetas em{" "}
-            <span className="italic text-gradient-gold">Resina</span>
+            Facetas em <span className="italic text-gradient-gold">Resina</span>
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            A transformação do sorriso com naturalidade. Cada faceta é planejada
-            de forma personalizada, respeitando proporções, características e
-            expectativas de cada paciente.
+            A transformação do sorriso com naturalidade. Cada faceta é planejada de forma
+            personalizada, respeitando proporções, características e expectativas de cada paciente.
           </p>
 
           <button

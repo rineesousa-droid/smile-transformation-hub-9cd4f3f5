@@ -32,8 +32,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 text-base md:text-lg text-white/80 max-w-xl leading-relaxed font-light">
-            Facetas em resina e harmonização facial com naturalidade e
-            planejamento personalizado.
+            Facetas em resina e harmonização facial com naturalidade e planejamento personalizado.
           </p>
 
           <div className="mt-7 flex flex-wrap items-center gap-4">
