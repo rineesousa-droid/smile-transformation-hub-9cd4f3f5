@@ -135,14 +135,20 @@ export function BeforeAfter() {
             </div>
           </div>
 
-          <div className="absolute bottom-6 left-6 right-6 flex items-end justify-between gap-4 text-white">
-            <div className="glass px-4 py-2 rounded-xl">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Procedimento</div>
-              <div className="text-sm font-medium">{active.label}</div>
+          <div className="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 flex items-end justify-between gap-2 sm:gap-4 text-white">
+            <div className="glass px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl min-w-0">
+              <div className="text-[8px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase opacity-80">
+                Procedimento
+              </div>
+              <div className="text-[11px] sm:text-sm font-medium truncate">{active.label}</div>
             </div>
-            <div className="glass px-4 py-2 rounded-xl text-right">
-              <div className="text-[10px] tracking-[0.2em] uppercase opacity-80">Sessões</div>
-              <div className="text-sm font-medium">Definido em avaliação</div>
+            <div className="glass px-2.5 py-1.5 sm:px-4 sm:py-2 rounded-lg sm:rounded-xl text-right min-w-0">
+              <div className="text-[8px] sm:text-[10px] tracking-[0.15em] sm:tracking-[0.2em] uppercase opacity-80">
+                Sessões
+              </div>
+              <div className="text-[11px] sm:text-sm font-medium truncate">
+                Definido em avaliação
+              </div>
             </div>
           </div>
         </div>
