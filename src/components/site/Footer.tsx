@@ -1,6 +1,6 @@
 import { Instagram, MessageCircle, MapPin, Clock } from "lucide-react";
 import { INSTAGRAM_URL, onWhatsAppClick } from "@/lib/whatsapp";
-import { CLINIC, unitMapUrl } from "@/lib/clinic-data";
+import { CLINIC, unitMapUrl, unitMapEmbedUrl } from "@/lib/clinic-data";
 import { unitWaLink } from "@/lib/whatsapp";
 
 export function Footer() {
