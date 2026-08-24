@@ -5,7 +5,7 @@ import { unitWaLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
-    <footer className="bg-background border-t border-border pt-20 pb-10">
+    <footer id="unidades" className="bg-background border-t border-border pt-20 pb-10 scroll-mt-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-12 mb-16">
           <div className="lg:col-span-4">
