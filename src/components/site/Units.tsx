@@ -1,6 +1,6 @@
 import { useReveal } from "@/hooks/useReveal";
 import { MapPin, MessageCircle } from "lucide-react";
-import { CLINIC, unitMapUrl } from "@/lib/clinic-data";
+import { CLINIC, unitMapUrl, unitMapEmbedUrl } from "@/lib/clinic-data";
 import { unitWaLink, onWhatsAppClick } from "@/lib/whatsapp";
 
 const shortAddress: Record<string, string> = {
