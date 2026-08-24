@@ -70,5 +70,10 @@ export function unitMapUrl(u: { mapUrl?: string; mapQuery: string }) {
   return u.mapUrl || `https://www.google.com/maps?q=${u.mapQuery}`;
 }
 
+/** Embed do Google Maps sem necessidade de API Key. */
+export function unitMapEmbedUrl(u: { mapQuery: string }) {
+  return `https://www.google.com/maps?q=${u.mapQuery}&z=16&output=embed`;
+}
+
 export type Unit = (typeof CLINIC.units)[number];
 export type UnitId = Unit["id"];
