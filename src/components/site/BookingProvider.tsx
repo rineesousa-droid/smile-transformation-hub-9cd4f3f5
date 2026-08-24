@@ -41,7 +41,7 @@ export function BookingProvider({ children }: { children: React.ReactNode }) {
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="sm:max-w-lg rounded-3xl">
-          <DialogHeader>
+          <DialogHeader className="pr-8 text-left">
             <DialogTitle className="font-display text-2xl">
               Em qual unidade você deseja ser atendido?
             </DialogTitle>
