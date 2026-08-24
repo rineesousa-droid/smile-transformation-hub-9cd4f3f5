@@ -119,10 +119,10 @@ export function BeforeAfter() {
             />
           </div>
 
-          <div className="absolute top-6 left-6 glass px-4 py-1.5 rounded-full text-white text-xs tracking-widest uppercase">
+          <div className="absolute top-3 left-3 sm:top-6 sm:left-6 glass px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-white text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-widest uppercase whitespace-nowrap">
             Antes
           </div>
-          <div className="absolute top-6 right-6 glass px-4 py-1.5 rounded-full text-white text-xs tracking-widest uppercase">
+          <div className="absolute top-3 right-3 sm:top-6 sm:right-6 glass px-2.5 py-1 sm:px-4 sm:py-1.5 rounded-full text-white text-[10px] sm:text-xs tracking-[0.15em] sm:tracking-widest uppercase whitespace-nowrap">
             Depois
           </div>
 
