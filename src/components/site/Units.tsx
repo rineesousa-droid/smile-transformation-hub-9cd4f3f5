@@ -1,6 +1,6 @@
 import { useReveal } from "@/hooks/useReveal";
 import { MapPin, MessageCircle } from "lucide-react";
-import { CLINIC, unitMapUrl, unitMapEmbedUrl } from "@/lib/clinic-data";
+import { CLINIC, unitMapUrl } from "@/lib/clinic-data";
 import { unitWaLink, onWhatsAppClick } from "@/lib/whatsapp";
 
 const shortAddress: Record<string, string> = {
@@ -36,23 +36,6 @@ export function Units() {
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">
                 {shortAddress[u.id] ?? u.address}
               </p>
-
-              <div className="relative mt-4 w-full h-[170px] sm:h-[190px] overflow-hidden rounded-xl border border-border bg-secondary">
-                <iframe
-                  src={unitMapEmbedUrl(u)}
-                  title={`Mapa — ${u.name}`}
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 h-full w-full border-0 pointer-events-none"
-                />
-                <a
-                  href={unitMapUrl(u)}
-                  target="_blank"
-                  rel="noopener"
-                  aria-label={`Abrir ${u.name} no Google Maps`}
-                  className="absolute inset-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold rounded-xl"
-                />
-              </div>
 
               <div className="mt-4 flex gap-2">
                 <a

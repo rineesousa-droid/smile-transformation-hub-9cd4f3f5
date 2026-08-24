@@ -1,6 +1,6 @@
 import { Instagram, MessageCircle, MapPin, Clock } from "lucide-react";
 import { INSTAGRAM_URL, onWhatsAppClick } from "@/lib/whatsapp";
-import { CLINIC, unitMapUrl } from "@/lib/clinic-data";
+import { CLINIC, unitMapUrl, unitMapEmbedUrl } from "@/lib/clinic-data";
 import { unitWaLink } from "@/lib/whatsapp";
 
 export function Footer() {
@@ -90,6 +90,23 @@ export function Footer() {
                         </div>
                       </div>
                     </div>
+                  </div>
+
+                  <div className="relative w-full h-[160px] md:h-[140px] overflow-hidden border-t border-border bg-secondary">
+                    <iframe
+                      src={unitMapEmbedUrl(u)}
+                      title={`Mapa — ${u.name}`}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="absolute inset-0 h-full w-full border-0 pointer-events-none"
+                    />
+                    <a
+                      href={unitMapUrl(u)}
+                      target="_blank"
+                      rel="noopener"
+                      aria-label={`Abrir ${u.name} no Google Maps`}
+                      className="absolute inset-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+                    />
                   </div>
                 </div>
               ))}
