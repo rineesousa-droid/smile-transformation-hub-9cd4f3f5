@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
-import dra from "@/assets/dra-yasmin.jpg";
+import dra from "@/assets/dra-yasmin-lopes.webp";
 import { CLINIC } from "@/lib/clinic-data";
 
 export function About() {
@@ -16,9 +16,9 @@ export function About() {
               src={dra}
               alt={`Retrato profissional de ${CLINIC.professional.fullName}`}
               loading="lazy"
-              className="w-full h-full object-cover"
-              width={800}
-              height={1000}
+              className="w-full h-full object-cover object-[50%_28%]"
+              width={1200}
+              height={2133}
             />
           </div>
           <div className="absolute -top-4 -left-4 w-24 h-24 border border-gold/40 rounded-full -z-10" />
