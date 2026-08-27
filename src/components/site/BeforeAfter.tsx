@@ -4,8 +4,8 @@ import beforeFacetas from "@/assets/facetas-antes.webp";
 import afterFacetas from "@/assets/facetas-depois.webp";
 import beforeLabial from "@/assets/labial-antes.webp";
 import afterLabial from "@/assets/labial-depois.webp";
-import beforeBotox from "@/assets/botox-antes.webp";
-import afterBotox from "@/assets/botox-depois.webp";
+import beforeBotox from "@/assets/botox-antes-padded.webp";
+import afterBotox from "@/assets/botox-depois-padded.webp";
 import { Move } from "lucide-react";
 
 const cases = [
@@ -34,11 +34,10 @@ const cases = [
     label: "Botox",
     before: beforeBotox,
     after: afterBotox,
-    aspect: "aspect-[3/4] sm:aspect-[3/4] md:aspect-[4/5]",
-    position: "50% 35%",
-    contain: true,
-    w: 578,
-    h: 1172,
+    aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]",
+    position: "50% 40%",
+    w: 1098,
+    h: 1465,
   },
 ];
 
@@ -141,7 +140,7 @@ export function BeforeAfter() {
             width={active.w}
             height={active.h}
             style={{ objectPosition: active.position }}
-            className={`absolute inset-0 w-full h-full ${(active as any).contain ? "object-contain" : "object-cover"}`}
+            className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
             draggable={false}
           />
@@ -152,11 +151,8 @@ export function BeforeAfter() {
               alt={`Antes — ${active.label}`}
               width={active.w}
               height={active.h}
-              style={{
-                width: (active as any).contain ? "100%" : `${(100 / Math.max(pos, 0.001)) * 100}%`,
-                objectPosition: active.position,
-              }}
-              className={`absolute inset-0 h-full max-w-none ${(active as any).contain ? "object-contain" : "object-cover"}`}
+              style={{ width: `${(100 / Math.max(pos, 0.001)) * 100}%`, objectPosition: active.position }}
+              className="absolute inset-0 h-full max-w-none object-cover"
               loading="lazy"
               draggable={false}
             />
