@@ -1,5 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
-import dra from "@/assets/dra-yasmin.jpg";
+import dra from "@/assets/dra-yasmin-lopes.webp";
 import { CLINIC } from "@/lib/clinic-data";
 
 export function About() {
