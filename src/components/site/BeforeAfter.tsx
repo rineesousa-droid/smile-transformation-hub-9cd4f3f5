@@ -141,7 +141,7 @@ export function BeforeAfter() {
             width={active.w}
             height={active.h}
             style={{ objectPosition: active.position }}
-            className="absolute inset-0 w-full h-full object-cover"
+            className={`absolute inset-0 w-full h-full ${(active as any).contain ? "object-contain" : "object-cover"}`}
             loading="lazy"
             draggable={false}
           />
@@ -152,8 +152,11 @@ export function BeforeAfter() {
               alt={`Antes — ${active.label}`}
               width={active.w}
               height={active.h}
-              style={{ width: `${(100 / Math.max(pos, 0.001)) * 100}%`, objectPosition: active.position }}
-              className="absolute inset-0 h-full max-w-none object-cover"
+              style={{
+                width: (active as any).contain ? "100%" : `${(100 / Math.max(pos, 0.001)) * 100}%`,
+                objectPosition: active.position,
+              }}
+              className={`absolute inset-0 h-full max-w-none ${(active as any).contain ? "object-contain" : "object-cover"}`}
               loading="lazy"
               draggable={false}
             />
