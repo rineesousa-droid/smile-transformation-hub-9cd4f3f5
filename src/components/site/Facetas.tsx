@@ -1,7 +1,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import { ArrowRight } from "lucide-react";
 import { useBooking } from "@/components/site/BookingProvider";
-import afterFacetas from "@/assets/after-1.jpg";
+import afterFacetas from "@/assets/facetas-depois.webp";
 
 export function Facetas() {
   const reveal = useReveal();
