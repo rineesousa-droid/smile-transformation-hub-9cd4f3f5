@@ -34,11 +34,10 @@ const cases = [
     label: "Botox",
     before: beforeBotox,
     after: afterBotox,
-    aspect: "aspect-[3/4] sm:aspect-[3/4] md:aspect-[4/5]",
-    position: "50% 35%",
-    contain: true,
-    w: 578,
-    h: 1172,
+    aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]",
+    position: "50% 40%",
+    w: 2421,
+    h: 1816,
   },
 ];
 
