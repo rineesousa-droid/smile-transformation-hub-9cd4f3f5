@@ -36,8 +36,8 @@ const cases = [
     after: afterBotox,
     aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]",
     position: "50% 40%",
-    w: 2421,
-    h: 1816,
+    w: 1098,
+    h: 1465,
   },
 ];
 
