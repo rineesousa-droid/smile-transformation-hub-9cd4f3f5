@@ -8,6 +8,7 @@ import { BeforeAfter } from "@/components/site/BeforeAfter";
 import { Harmonizacao } from "@/components/site/Harmonizacao";
 import { About } from "@/components/site/About";
 import { CompleteCare } from "@/components/site/CompleteCare";
+import { Testimonials } from "@/components/site/Testimonials";
 import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
@@ -83,6 +84,7 @@ function Index() {
         <Harmonizacao />
         <About />
         <CompleteCare />
+        <Testimonials />
         <FAQ />
         <FinalCTA />
         <Footer />
