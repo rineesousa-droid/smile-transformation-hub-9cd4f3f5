@@ -1,7 +1,7 @@
 import { useReveal } from "@/hooks/useReveal";
 import { ArrowRight } from "lucide-react";
 import { useBooking } from "@/components/site/BookingProvider";
-import harmonizacaoImg from "@/assets/after-labial.jpg";
+import harmonizacaoImg from "@/assets/harmonizacao-facial.webp";
 
 const items = [
   {
