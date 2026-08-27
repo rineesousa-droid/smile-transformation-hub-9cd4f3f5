@@ -1,14 +1,44 @@
 import { useRef, useState, useEffect } from "react";
 import { useReveal } from "@/hooks/useReveal";
-import beforeFacetas from "@/assets/before-1.jpg";
-import afterFacetas from "@/assets/after-1.jpg";
-import beforeLabial from "@/assets/before-labial.jpg";
-import afterLabial from "@/assets/after-labial.jpg";
+import beforeFacetas from "@/assets/facetas-antes.webp";
+import afterFacetas from "@/assets/facetas-depois.webp";
+import beforeLabial from "@/assets/labial-antes.webp";
+import afterLabial from "@/assets/labial-depois.webp";
+import beforeBotox from "@/assets/botox-antes.webp";
+import afterBotox from "@/assets/botox-depois.webp";
 import { Move } from "lucide-react";
 
 const cases = [
-  { id: "facetas", label: "Facetas em Resina", before: beforeFacetas, after: afterFacetas },
-  { id: "labial", label: "Harmonização Facial", before: beforeLabial, after: afterLabial },
+  {
+    id: "facetas",
+    label: "Facetas em Resina",
+    before: beforeFacetas,
+    after: afterFacetas,
+    aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]",
+    position: "50% 55%",
+    w: 854,
+    h: 1280,
+  },
+  {
+    id: "labial",
+    label: "Preenchimento Labial",
+    before: beforeLabial,
+    after: afterLabial,
+    aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[16/10]",
+    position: "50% 50%",
+    w: 1024,
+    h: 632,
+  },
+  {
+    id: "botox",
+    label: "Botox",
+    before: beforeBotox,
+    after: afterBotox,
+    aspect: "aspect-[4/5] sm:aspect-[3/4] md:aspect-[4/3]",
+    position: "50% 22%",
+    w: 578,
+    h: 1172,
+  },
 ];
 
 export function BeforeAfter() {
@@ -27,11 +57,14 @@ export function BeforeAfter() {
       setPos(Math.max(0, Math.min(100, p)));
     };
     const onMove = (e: MouseEvent) => dragging.current && move(e.clientX);
-    const onTouch = (e: TouchEvent) =>
-      dragging.current && e.touches[0] && move(e.touches[0].clientX);
+    const onTouch = (e: TouchEvent) => {
+      if (dragging.current && e.touches[0]) {
+        move(e.touches[0].clientX);
+      }
+    };
     const up = () => (dragging.current = false);
     window.addEventListener("mousemove", onMove);
-    window.addEventListener("touchmove", onTouch);
+    window.addEventListener("touchmove", onTouch, { passive: true });
     window.addEventListener("mouseup", up);
     window.addEventListener("touchend", up);
     return () => {
@@ -64,15 +97,18 @@ export function BeforeAfter() {
           </p>
         </div>
 
-        <div className="flex flex-wrap gap-3 justify-center mb-7">
+        <div className="flex flex-wrap gap-2.5 sm:gap-3 justify-center mb-7">
           {cases.map((c) => {
             const isActive = active.id === c.id;
             return (
               <button
                 key={c.id}
-                onClick={() => setActive(c)}
+                onClick={() => {
+                  setActive(c);
+                  setPos(50);
+                }}
                 aria-pressed={isActive}
-                className={`px-5 py-2.5 rounded-full text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
+                className={`px-4 sm:px-5 py-2.5 rounded-full text-[13px] sm:text-sm transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
                   isActive
                     ? "bg-foreground text-background shadow-soft font-semibold"
                     : "bg-secondary text-foreground/70 hover:bg-secondary/70 font-medium"
@@ -93,29 +129,32 @@ export function BeforeAfter() {
           aria-valuenow={Math.round(pos)}
           tabIndex={0}
           onKeyDown={onKey}
-          className={`relative w-full max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-luxe select-none cursor-ew-resize group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold ${
-            active.id === "labial" ? "aspect-[4/3]" : "aspect-[16/10]"
-          }`}
+          className={`relative w-full max-w-3xl mx-auto rounded-3xl overflow-hidden shadow-luxe select-none cursor-ew-resize group touch-pan-y focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold bg-black/90 ${active.aspect}`}
           onMouseDown={() => (dragging.current = true)}
           onTouchStart={() => (dragging.current = true)}
         >
           <img
+            key={`after-${active.id}`}
             src={active.after}
             alt={`Depois — ${active.label}`}
-            className={`absolute inset-0 w-full h-full ${
-              active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
-            }`}
+            width={active.w}
+            height={active.h}
+            style={{ objectPosition: active.position }}
+            className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
+            draggable={false}
           />
           <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
             <img
+              key={`before-${active.id}`}
               src={active.before}
               alt={`Antes — ${active.label}`}
-              className={`absolute inset-0 h-full w-[100vw] max-w-none ${
-                active.id === "labial" ? "object-cover object-center" : "object-contain bg-black/90"
-              }`}
-              style={{ width: `${(100 / pos) * 100}%` }}
+              width={active.w}
+              height={active.h}
+              style={{ width: `${(100 / Math.max(pos, 0.001)) * 100}%`, objectPosition: active.position }}
+              className="absolute inset-0 h-full max-w-none object-cover"
               loading="lazy"
+              draggable={false}
             />
           </div>
 
@@ -127,11 +166,11 @@ export function BeforeAfter() {
           </div>
 
           <div
-            className="absolute top-0 bottom-0 w-px bg-white shadow-luxe"
+            className="absolute top-0 bottom-0 w-px bg-white/90 shadow-luxe"
             style={{ left: `${pos}%` }}
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white shadow-luxe flex items-center justify-center group-hover:scale-110 transition-transform">
-              <Move size={20} className="text-ink rotate-90" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-luxe flex items-center justify-center group-hover:scale-110 transition-transform">
+              <Move size={18} className="text-ink rotate-90" />
             </div>
           </div>
 
