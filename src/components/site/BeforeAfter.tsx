@@ -143,7 +143,7 @@ export function BeforeAfter() {
             width={active.w}
             height={active.h}
             style={{ objectPosition: active.position }}
-            className="absolute inset-0 w-full h-full object-cover"
+            className={`absolute inset-0 w-full h-full ${active.fit}`}
             loading="lazy"
             draggable={false}
           />
@@ -155,7 +155,7 @@ export function BeforeAfter() {
               width={active.w}
               height={active.h}
               style={{ width: `${(100 / Math.max(pos, 0.001)) * 100}%`, objectPosition: active.position }}
-              className="absolute inset-0 h-full max-w-none object-cover"
+              className={`absolute inset-0 h-full max-w-none ${active.fit}`}
               loading="lazy"
               draggable={false}
             />
