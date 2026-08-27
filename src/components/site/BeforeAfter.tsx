@@ -4,8 +4,8 @@ import beforeFacetas from "@/assets/facetas-antes.webp";
 import afterFacetas from "@/assets/facetas-depois.webp";
 import beforeLabial from "@/assets/labial-antes.webp";
 import afterLabial from "@/assets/labial-depois.webp";
-import beforeBotox from "@/assets/botox-antes.webp";
-import afterBotox from "@/assets/botox-depois.webp";
+import beforeBotox from "@/assets/botox-antes-padded.webp";
+import afterBotox from "@/assets/botox-depois-padded.webp";
 import { Move } from "lucide-react";
 
 const cases = [
