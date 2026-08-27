@@ -84,6 +84,7 @@ function Index() {
         <Harmonizacao />
         <About />
         <CompleteCare />
+        <Testimonials />
         <FAQ />
         <FinalCTA />
         <Footer />
